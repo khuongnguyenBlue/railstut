@@ -24,3 +24,9 @@
 # ignore database.yml va secret.yml
 config/database.yml
 config/secrets.yml
+
+# ignore something else
+.drone.yml
+Dockerfile
+.framgia-ci-reports/
+.framgia-ci-result.temp.yml
