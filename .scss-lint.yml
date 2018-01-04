@@ -2,3 +2,6 @@ scss_files: 'app/assets/stylesheets/**'
 exclude:
   - 'app/assets/stylesheets/application.scss'
   - 'vendor/assets/**'
+linters:
+  Comment:
+    exclude: '**/*.css'
