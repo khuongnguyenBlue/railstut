@@ -1,0 +1,36 @@
+vi:
+  base_title: "Hướng dẫn Ruby on Rails Sample App"
+  lang:
+    lang: "Ngôn ngữ"
+    en: "Tiếng Anh"
+    vi: "Tiếng Việt"
+  static_pages:
+    home:
+      title: "Trang chủ"
+      header1: "Ứng dụng mẫu"
+      text1: "Đây là trang chủ của"
+      text2: "với ứng dụng mẫu."
+      link1: "Hướng dẫn Ruby on Rails"
+    about:
+      title: "Chi tiết"
+      header1: "Chi tiết"
+      text1: "Bộ"
+      text2: "bao gồm"
+      text3: "và"
+      text4: "để dạy cách phát triển web với"
+      text5: "Đây chính là ứng dụng mẫu dùng cho hướng dẫn."
+      link1: "Hướng dẫn Ruby on Rails"
+      link2: "sách"
+      link3: "bộ hình ảnh minh họa"
+    help:
+      title: "Trợ giúp"
+      header1: "Trợ giúp"
+      text1: "Tìm sự trợ giúp ở"
+      text2: "Để tìm sự trợ giúp trong app mẫu này, xem cuốn"
+      link1: "Mục trợ giúp hướng dẫn Rails"
+      link2: "Hướng dẫn Ruby on Rails"
+    contact:
+      title: "Liên hệ"
+      header1: "Liên hệ"
+      text1: "Liên hệ tại"
+      link1: "trang này"
