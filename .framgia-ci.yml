@@ -2,8 +2,8 @@ project_type: ruby
 test:
   bundle-audit:
     command: bundle-audit check --update | tee .framgia-ci-reports/bundle-audit.txt
-  rspec:
-    command: rspec --format html --out .framgia-ci-reports/rspec.html spec/
+  # rspec:
+  #   command: rspec --format html --out .framgia-ci-reports/rspec.html spec/
   brakeman:
     command: brakeman -o .framgia-ci-reports/brakeman.html -o .framgia-ci-reports/brakeman.json
   reek:
