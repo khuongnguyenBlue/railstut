@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Railstut</title>
+    <title><%= yield :title %> | <%= t "base_title" %></title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag "application", media:"all",
+      "data-turbolinks-track":"reload" %>
+    <%= javascript_include_tag "application",
+      "data-turbolinks-track":"reload" %>
   </head>
 
   <body>
+    <div id="nav">
+      <%= t "lang.lang" %>:
+      <%= link_to_unless_current t("lang.en"), locale: "en" %> |
+      <%= link_to_unless_current t("lang.vi"), locale: "vi" %>
+    </div>
     <%= yield %>
   </body>
 </html>
