@@ -1,5 +1,18 @@
 en:
   base_title: "Ruby on Rails Tutorial Sample App"
+  layouts:
+    footer:
+      text1: "The"
+      text2: "by"
+      link1: "Ruby on Rails Tutorial"
+      link2: "About"
+      link3: "Contact"
+      link4: "News"
+    header:
+      link1: "sample app"
+      link2: "Home"
+      link3: "Help"
+      link4: "Log in"
   lang:
     lang: "Language"
     en: "English"
@@ -11,6 +24,8 @@ en:
       text1: "This is the home page for the"
       text2: "sample application."
       link1: "Ruby on Rails Tutorial"
+      link2: "Sign up now!"
+      alt1: "Rails logo"
     about:
       title: "About"
       header1: "About"
@@ -35,4 +50,8 @@ en:
       header1: "Contact"
       text1: "Contact the Ruby on Rails Tutorial about the sample app at the"
       link1: "contact page"
-
+  users:
+    new:
+      title: "Sign up"
+      header1: "Sign up"
+      text1: "This will be a signup page for new users."

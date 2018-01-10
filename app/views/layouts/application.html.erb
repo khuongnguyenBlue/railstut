@@ -9,14 +9,12 @@
       "data-turbolinks-track":"reload" %>
     <%= javascript_include_tag "application",
       "data-turbolinks-track":"reload" %>
+    <%= render "layouts/shim" %>
   </head>
 
   <body>
-    <div id="nav">
-      <%= t "lang.lang" %>:
-      <%= link_to_unless_current t("lang.en"), locale: "en" %> |
-      <%= link_to_unless_current t("lang.vi"), locale: "vi" %>
-    </div>
+    <%= render "layouts/header" %>
     <%= yield %>
+    <%= render "layouts/footer" %>
   </body>
 </html>
