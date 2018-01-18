@@ -13,4 +13,9 @@ class ApplicationController < ActionController::Base
   def default_url_options
     {locale: I18n.locale}
   end
+
+  def redirect_with_flash type, msg, url
+    flash[type] = msg
+    redirect_to url
+  end
 end

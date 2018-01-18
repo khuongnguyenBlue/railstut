@@ -6,11 +6,17 @@ en:
         signin: "Welcome to the Sample App!"
         update_prof: "Profile updated"
         delete_user: "User deleted"
+        acc_activate: "Account activated"
       warning:
         user_not_found: "User profile not found!"
+        acc_not_activated: "Account not activated. \
+          Check your email for the activation link."
       danger:
         invalid_login: "Invalid email/password combination"
         login_first: "Please log in."
+        activate_err: "Invalid activation link"
+      info:
+        activate_by_email: "Please check your email to activate your account."
   error_explanation:
     error_text: "The form contains"
     error: "error"
@@ -100,3 +106,10 @@ en:
       sign_up: "Sign up now!"
       password: "Password"
       remember: "Remember me on this computer"
+  user_mailer:
+    account_activation:
+      subject: "Account activation"
+      header: "Sample App"
+      greeting: "Hi"
+      greeting_cont: "Welcome to the Sample App! Click on the link below to activate your account:"
+      activate: "Activate"

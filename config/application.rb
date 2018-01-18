@@ -9,7 +9,7 @@ Bundler.require(*Rails.groups)
 module Railstut
   class Application < Rails::Application
     # set default locale
-    config.i18n.default_locale = :vi
+    config.i18n.default_locale = :en
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.1
 

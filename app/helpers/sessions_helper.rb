@@ -22,7 +22,7 @@ module SessionsHelper
       @current_user ||= User.find_by(id: session_uid)
     elsif (cookies_uid = cookies.signed[:user_id])
       user = User.find_by(id: cookies_uid)
-      if user && user.authenticate?(cookies[:remember_token])
+      if user && user.authenticate?(:remember, cookies[:remember_token])
         log_in user
         @current_user = user
       end
