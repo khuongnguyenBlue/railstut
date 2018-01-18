@@ -1,9 +1,10 @@
 class UsersController < ApplicationController
   attr_reader :user
 
+  before_action :load_gender_options, only: %i(new create)
+
   def new
     @user = User.new
-    @gender_options = load_gender_options
   end
 
   def show
@@ -16,6 +17,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new user_params
     if user.save
+      log_in user
       flash[:success] = t "message.type.success.signin"
       redirect_to user
     else
@@ -31,7 +33,7 @@ class UsersController < ApplicationController
   end
 
   def load_gender_options
-    User.sexes.map do |key, value|
+    @gender_options = User.sexes.map do |key, value|
       [I18n.t("users.sex.#{key}"), value]
     end
   end

@@ -6,6 +6,8 @@ en:
         signin: "Welcome to the Sample App!"
       warning:
         user_not_found: "User profile not found!"
+      danger:
+        invalid_login: "Invalid email/password combination"
   error_explanation:
     error_text: "The form contains"
     error: "error"
@@ -22,6 +24,11 @@ en:
       link2: "Home"
       link3: "Help"
       link4: "Log in"
+      account: "Account"
+      users: "Users"
+      profile: "Profile"
+      setting: "Setting"
+      log_out: "Log out"
   lang:
     lang: "Language"
     en: "English"
@@ -73,3 +80,9 @@ en:
       label_passwd: "Password"
       label_passwd_cf: "Confirmation"
       label_submit: "Create my account"
+  sessions:
+    new:
+      log_in: "Log in"
+      new?: "New user?"
+      sign_up: "Sign up now!"
+      password: "Password"
