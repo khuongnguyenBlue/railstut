@@ -10,3 +10,10 @@ users:
       minimum: 6
   age:
     lwr_bound: 0
+microposts:
+  content:
+    length:
+      maximum: 140
+  picture:
+    size:
+      max_vol: 5

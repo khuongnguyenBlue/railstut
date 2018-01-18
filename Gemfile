@@ -9,18 +9,22 @@ gem "bcrypt"
 gem "bootstrap-sass", "3.3.7"
 gem "bootstrap-will_paginate"
 gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
+gem "carrierwave", "1.2.2"
 gem "coffee-rails", "~> 4.2"
 gem "config"
 gem "faker"
 gem "jbuilder", "~> 2.5"
 gem "jquery-rails"
+gem "mini_magick", "4.7.0"
 gem "puma", "~> 3.7"
 gem "rails", "~> 5.1.4"
 gem "rails-i18n"
+gem "rails-timeago"
 gem "sass-rails", "~> 5.0"
 gem "turbolinks", "~> 5"
 gem "turbolinks", "~> 5"
 gem "uglifier", ">= 1.3.0"
+gem "i18n-js"
 
 group :development, :test do
   gem "autoprefixer-rails"
@@ -28,7 +32,6 @@ group :development, :test do
   gem "binding_of_caller"
   gem "brakeman", require: false
   gem "bundler-audit"
-  gem "capybara", "~> 2.13"
   gem "capybara", "~> 2.13"
   gem "database_cleaner"
   gem "eslint-rails", git: "https://github.com/octoberstorm/eslint-rails", require: false
@@ -55,6 +58,10 @@ group :development do
   gem "spring"
   gem "spring-watcher-listen", "~> 2.0.0"
   gem "web-console", ">= 3.3.0"
+end
+
+group :production do
+  gem "fog", "1.42"
 end
 
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
