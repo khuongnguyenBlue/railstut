@@ -4,10 +4,13 @@ en:
     type:
       success:
         signin: "Welcome to the Sample App!"
+        update_prof: "Profile updated"
+        delete_user: "User deleted"
       warning:
         user_not_found: "User profile not found!"
       danger:
         invalid_login: "Invalid email/password combination"
+        login_first: "Please log in."
   error_explanation:
     error_text: "The form contains"
     error: "error"
@@ -53,7 +56,6 @@ en:
       link1: "Ruby on Rails Tutorial"
       link2: "book"
       link3: "screencast series"
-      link4: "Ruby on Rails"
     help:
       title: "Help"
       header1: "Help"
@@ -70,16 +72,27 @@ en:
     sex:
       male: "Male"
       female: "Female"
+    index:
+      user_index: "All users"
     new:
       title: "Sign up"
       header1: "Sign up"
+      label_submit: "Create my account"
+    edit:
+      title: "Edit user"
+      header: "Update your profile"
+      label_submit: "Save changes"
+      gravatar_change: "Change"
+    form:
       label_name: "Name"
       label_email: "Email"
       label_gender: "Gender"
       label_age: "Age"
       label_passwd: "Password"
       label_passwd_cf: "Confirmation"
-      label_submit: "Create my account"
+    user:
+      delete: "delete"
+      confirm: "You sure?"
   sessions:
     new:
       log_in: "Log in"

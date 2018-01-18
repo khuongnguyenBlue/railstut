@@ -4,10 +4,13 @@ vi:
     type:
       success:
         signin: "Chào mừng bạn đến với ứng dụng mẫu!"
+        update_prof: "Thông tin đã được cập nhật"
+        delete_user: "Đã xóa người dùng"
       warning:
         user_not_found: "Không tìm thấy dữ liệu người dùng!"
       danger:
         invalid_login: "Địa chỉ email hoặc mật khẩu không đúng"
+        login_first: "Vui lòng đăng nhập trước."
   error_explanation:
     error_text: "Biểu mẫu chứa"
     error: "lỗi"
@@ -69,16 +72,27 @@ vi:
     sex:
       male: "Nam"
       female: "Nữ"
+    index:
+      user_index: "Danh sách người dùng"
     new:
       title: "Đăng ký"
       header1: "Đăng ký"
+      label_submit: "Tạo tài khoản của tôi"
+    edit:
+      title: "Chỉnh sửa người dùng"
+      header: "Cập nhật thông tin người dùng"
+      label_submit: "Lưu thay đổi"
+      gravatar_change: "Thay đổi"
+    form:
       label_name: "Tên"
       label_email: "Email"
       label_gender: "Giới tính"
       label_age: "Tuổi"
       label_passwd: "Mật khẩu"
       label_passwd_cf: "Xác nhận mật khẩu"
-      label_submit: "Tạo tài khoản của tôi"
+    user:
+      delete: "xóa"
+      confirm: "Bạn có chắc chắn không?"
   sessions:
     new:
       log_in: "Đăng nhập"
