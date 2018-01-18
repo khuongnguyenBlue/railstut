@@ -1,5 +1,14 @@
 en:
   base_title: "Ruby on Rails Tutorial Sample App"
+  message:
+    type:
+      success:
+        signin: "Welcome to the Sample App!"
+      warning:
+        user_not_found: "User profile not found!"
+  error_explanation:
+    error_text: "The form contains"
+    error: "error"
   layouts:
     footer:
       text1: "The"
@@ -51,7 +60,16 @@ en:
       text1: "Contact the Ruby on Rails Tutorial about the sample app at the"
       link1: "contact page"
   users:
+    sex:
+      male: "Male"
+      female: "Female"
     new:
       title: "Sign up"
       header1: "Sign up"
-      text1: "This will be a signup page for new users."
+      label_name: "Name"
+      label_email: "Email"
+      label_gender: "Gender"
+      label_age: "Age"
+      label_passwd: "Password"
+      label_passwd_cf: "Confirmation"
+      label_submit: "Create my account"

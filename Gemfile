@@ -6,6 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 gem "rails", "~> 5.1.4"
+gem "rails-i18n"
 gem "bcrypt"
 gem "config"
 gem "bootstrap-sass", "3.3.7"
