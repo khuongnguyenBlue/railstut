@@ -1,5 +1,14 @@
 vi:
   base_title: "Hướng dẫn Ruby on Rails Sample App"
+  message:
+    type:
+      success:
+        signin: "Chào mừng bạn đến với ứng dụng mẫu!"
+      warning:
+        user_not_found: "Không tìm thấy dữ liệu người dùng!"
+  error_explanation:
+    error_text: "Biểu mẫu chứa"
+    error: "lỗi"
   layouts:
     footer:
       text1: "Bộ"
@@ -50,7 +59,16 @@ vi:
       text1: "Liên hệ tại"
       link1: "trang này"
   users:
+    sex:
+      male: "Nam"
+      female: "Nữ"
     new:
       title: "Đăng ký"
       header1: "Đăng ký"
-      text1: "Đây là trang đăng ký cho tất cả user"
+      label_name: "Name"
+      label_email: "Email"
+      label_gender: "Giới tính"
+      label_age: "Tuổi"
+      label_passwd: "Mật khẩu"
+      label_passwd_cf: "Xác nhận mật khẩu"
+      label_submit: "Tạo tài khoản của tôi"

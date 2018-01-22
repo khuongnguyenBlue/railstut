@@ -1,16 +1,18 @@
 class User < ApplicationRecord
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.{1}[a-z]+\z/i
-  enum sex: %w(Male Female).freeze
+  enum sex: %w(male female).freeze
 
-  validates :name, presence: Setting.users.name.presence,
-    length: Setting.users.name.length
-  validates :email, presence: Setting.users.email.presence,
-    length: Setting.users.email.length, format: {with: VALID_EMAIL_REGEX},
-    uniqueness: {case_sensitive: false}
-  validates :password, presence: Setting.users.password.presence,
-    length: Setting.users.password.length
-  validates :age, numericality: {only_integer: true, greater_than: Setting.users.age.lwr_bound}
-  validates :gender, inclusion: {in: :sex}
+  validates :name, presence: true,
+    length: {maximum: Settings.users.name.length.maximum}
+  validates :email, presence: true,
+    length: {maximum: Settings.users.email.length.maximum},
+    format: {with: VALID_EMAIL_REGEX}, uniqueness: {case_sensitive: false}
+  validates :password, presence: true,
+    length: {minimum: Settings.users.password.length.minimum}
+  validates :age, presence: true, numericality: {
+    only_integer: true, greater_than: Settings.users.age.lwr_bound
+  }
+  validates :gender, inclusion: {in: sexes.values}
 
   before_save :downcase_email
 
