@@ -6,6 +6,8 @@ vi:
         signin: "Chào mừng bạn đến với ứng dụng mẫu!"
       warning:
         user_not_found: "Không tìm thấy dữ liệu người dùng!"
+      danger:
+        invalid_login: "Địa chỉ email hoặc mật khẩu không đúng"
   error_explanation:
     error_text: "Biểu mẫu chứa"
     error: "lỗi"
@@ -22,6 +24,11 @@ vi:
       link2: "Trang chủ"
       link3: "Trợ giúp"
       link4: "Đăng nhập"
+      account: "Tài khoản"
+      users: "Người dùng"
+      profile: "Thông tin cá nhân"
+      setting: "Thiết lập"
+      log_out: "Đăng xuất"
   lang:
     lang: "Ngôn ngữ"
     en: "Tiếng Anh"
@@ -65,10 +72,16 @@ vi:
     new:
       title: "Đăng ký"
       header1: "Đăng ký"
-      label_name: "Name"
+      label_name: "Tên"
       label_email: "Email"
       label_gender: "Giới tính"
       label_age: "Tuổi"
       label_passwd: "Mật khẩu"
       label_passwd_cf: "Xác nhận mật khẩu"
       label_submit: "Tạo tài khoản của tôi"
+  sessions:
+    new:
+      log_in: "Đăng nhập"
+      new?: "Thành viên mới?"
+      sign_up: "Đăng ký ngay!"
+      password: "Mật khẩu"
