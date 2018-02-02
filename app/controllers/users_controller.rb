@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   before_action :admin_user, only: :destroy
 
   def index
-    @users = User.paginate page: params[:page]
+    @users = User.activated.paginate page: params[:page]
   end
 
   def new
@@ -16,17 +16,15 @@ class UsersController < ApplicationController
   end
 
   def show
-  rescue ActiveRecord::RecordNotFound
-    flash[:warning] = t "message.type.warning.user_not_found"
-    redirect_to root_url
+    redirect_to root_url && return unless user.activated?
+    redirect_with_flash :warning, t("message.type.warning.user_not_found"), root_url unless usergit
   end
 
   def create
     @user = User.new user_params
     if user.save
-      log_in user
-      flash[:success] = t "message.type.success.signin"
-      redirect_to user
+      user.send_activation_email
+      redirect_with_flash :info, t("message.type.info.activate_by_email"), root_url
     else
       render :new
     end
@@ -36,8 +34,7 @@ class UsersController < ApplicationController
 
   def update
     if user.update_attributes user_params
-      flash[:success] = t "message.type.success.update_prof"
-      redirect_to user
+      redirect_with_flash :success, t("message.type.success.update_prof"), user
     else
       render :edit
     end
@@ -45,8 +42,7 @@ class UsersController < ApplicationController
 
   def destroy
     user.destroy
-    flash[:success] = t "message.type.success.delete_user"
-    redirect_to users_url
+    redirect_with_flash :success, t("message.type.success.delete_user"), users_url
   end
 
   private
@@ -65,8 +61,7 @@ class UsersController < ApplicationController
   def logged_in_user
     return if logged_in?
     store_location
-    flash[:danger] = t "message.type.danger.login_first"
-    redirect_to login_url
+    redirect_with_flash :danger, t("message.type.danger.login_first"), login_url
   end
 
   def correct_user

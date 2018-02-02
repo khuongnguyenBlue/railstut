@@ -3,6 +3,7 @@ IrresponsibleModule:
 UtilityFunction:
   public_methods_only: true
 exclude_paths:
-  - 'vendor'
-  - 'db/migrate'
+  - "vendor"
+  - "db/migrate"
+  - "spec/mailers/previews"
 

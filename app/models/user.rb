@@ -1,5 +1,7 @@
 class User < ApplicationRecord
-  attr_reader :remember_token
+  attr_reader :remember_token, :activation_token
+
+  scope :activated, ->{where activated: true}
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.{1}[a-z]+\z/i
   enum sex: %w(male female).freeze
@@ -17,6 +19,7 @@ class User < ApplicationRecord
   validates :gender, inclusion: {in: sexes.values}
 
   before_save :downcase_email
+  before_create :create_activation_digest
 
   has_secure_password
 
@@ -44,9 +47,18 @@ class User < ApplicationRecord
     update_attributes remember_digest: nil
   end
 
-  def authenticate? remember_token
-    return false unless remember_digest
-    BCrypt::Password.new(remember_digest).is_password? remember_token
+  def authenticate? attribute, token
+    digest = send "#{attribute}_digest"
+    return false unless digest
+    BCrypt::Password.new(digest).is_password? token
+  end
+
+  def activate
+    update_attributes activated: true, activated_at: Time.zone.now
+  end
+
+  def send_activation_email
+    UserMailer.account_activation(self).deliver_now
   end
 
   def current_user?
@@ -57,5 +69,10 @@ class User < ApplicationRecord
 
   def downcase_email
     email.downcase!
+  end
+
+  def create_activation_digest
+    @activation_token = User.new_token
+    self.activation_digest = User.digest activation_token
   end
 end
