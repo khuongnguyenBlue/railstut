@@ -16,8 +16,9 @@ class UsersController < ApplicationController
   end
 
   def show
-    redirect_to root_url && return unless user.activated?
-    redirect_with_flash :warning, t("message.type.warning.user_not_found"), root_url unless usergit
+    return if user.activated?
+
+    redirect_with_flash :danger, t("message.type.danger.user_not_active"), root_url
   end
 
   def create
@@ -48,8 +49,8 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation,
-      :age, :gender)
+    params.require(:user).permit :name, :email, :password, :password_confirmation,
+      :age, :gender
   end
 
   def load_gender_options
@@ -60,12 +61,13 @@ class UsersController < ApplicationController
 
   def logged_in_user
     return if logged_in?
+
     store_location
     redirect_with_flash :danger, t("message.type.danger.login_first"), login_url
   end
 
   def correct_user
-    redirect_to root_url unless user.current_user?
+    redirect_to root_url unless user.current_user? current_user
   end
 
   def admin_user
@@ -74,5 +76,9 @@ class UsersController < ApplicationController
 
   def find_user
     @user = User.find_by id: params[:id]
+
+    return if user
+
+    redirect_with_flash :warning, t("message.type.warning.user_not_found"), root_url
   end
 end

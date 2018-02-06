@@ -7,6 +7,7 @@ vi:
         update_prof: "Thông tin đã được cập nhật"
         delete_user: "Đã xóa người dùng"
         acc_activate: "Tài khoản đã được kích hoạt"
+        password_reset: "Password has been reset."
       warning:
         user_not_found: "Không tìm thấy dữ liệu người dùng!"
         acc_not_activated: "Tài khoản chưa được kích hoạt. \
@@ -15,11 +16,16 @@ vi:
         invalid_login: "Địa chỉ email hoặc mật khẩu không đúng"
         login_first: "Vui lòng đăng nhập trước."
         activate_err: "Link kích hoạt không hợp lệ"
+        email_not_found: "Không tìm thấy địa chỉ email này"
+        expired_reset_link: "Đường dẫn tạo lại mật khẩu đã quá hạn"
+        user_not_active: "Người dùng chưa được kích hoạt"
       info:
         activate_by_email: "Vui lòng kiểm tra email để kích hoạt tài khoản"
+        passwd_reset_sent: "Email đã được gửi kèm theo hướng dẫn làm lại mật khẩu"
   error_explanation:
     error_text: "Biểu mẫu chứa"
     error: "lỗi"
+    empty: "không thể để trống"
   layouts:
     footer:
       text1: "Bộ"
@@ -106,10 +112,31 @@ vi:
       sign_up: "Đăng ký ngay!"
       password: "Mật khẩu"
       remember: "Nhớ tài khoản của tôi cho lần tới"
+      forgot_password: "(quên mật khẩu)"
   user_mailer:
     account_activation:
       subject: "Kích hoạt tài khoản"
       header: "Ứng dụng mẫu"
       greeting: "Chào"
-      greeting_cont: "Chúc mừng bạn đến với ứng dụng mẫu! Click vào link bên dưới để kích hoạt tài khoản:"
+      greeting_cont: "Chúc mừng bạn đến với ứng dụng mẫu! Click vào link bên dưới để
+        kích hoạt tài khoản:"
       activate: "Kích hoạt"
+    password_reset:
+      subject: "Tạo lại mật khẩu"
+      header: "Tạo lại mật khẩu"
+      reset_password: "Tạo lại mật khẩu"
+      text1: "Để tạo lại mật khẩu, hãy click vào link bên dưới:"
+      text2: "Link này sẽ hết hạn trong vòng 2 giờ."
+      text3: "Nếu bạn không yêu cầu tạo lại mật khẩu, vui lòng bỏ qua email này và mật
+        khẩu sẽ được giữ nguyên."
+  password_resets:
+    new:
+      title: "Quên mật khẩu"
+      header: "Quên mật khẩu"
+      submit: "Gửi"
+    edit:
+      title: "Tạo lại mật khẩu"
+      header: "Tạo lại mật khẩu"
+      password: "Mật khẩu mới"
+      password_cf: "Xác nhật"
+      submit: "Cập nhật mật khẩu"
