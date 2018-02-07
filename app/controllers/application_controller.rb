@@ -18,4 +18,10 @@ class ApplicationController < ActionController::Base
     flash[type] = msg
     redirect_to url
   end
+
+  def logged_in_user
+    return if logged_in?
+    store_location
+    redirect_with_flash :danger, t("message.type.danger.login_first"), login_url
+  end
 end

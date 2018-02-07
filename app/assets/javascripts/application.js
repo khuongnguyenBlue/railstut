@@ -14,4 +14,9 @@
 //= require bootstrap
 //= require rails-ujs
 //= require turbolinks
+//= require rails-timeago
+//= require rails-timeago-all
+//= require i18n
+//= require i18n.js
+//= require i18n/translations
 //= require_tree .

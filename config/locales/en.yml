@@ -1,5 +1,7 @@
 en:
   base_title: "Ruby on Rails Tutorial Sample App"
+  alert:
+    maximum_file: "Maximum file size is 5MB. Please choose a smaller file."
   message:
     type:
       success:
@@ -8,6 +10,8 @@ en:
         delete_user: "User deleted"
         acc_activate: "Account activated"
         password_reset: "Password has been reset."
+        create_micropost: "Micropost created!"
+        delete_micropost: "Micropost deleted!"
       warning:
         user_not_found: "User profile not found!"
         acc_not_activated: "Account not activated.
@@ -26,6 +30,7 @@ en:
     error_text: "The form contains"
     error: "error"
     empty: "can't be empty"
+    too_big_file: "should be less than 5MB"
   layouts:
     footer:
       text1: "The"
@@ -51,6 +56,7 @@ en:
   static_pages:
     home:
       title: "Home"
+    non_logged_in_home:
       header1: "Sample App"
       text1: "This is the home page for the"
       text2: "sample application."
@@ -140,3 +146,16 @@ en:
       password: "Password"
       password_cf: "Confirmation"
       submit: "Update password"
+  microposts:
+    micropost:
+      delete: "delete"
+      confirm: "You sure?"
+  shared:
+    user_info:
+      view_profile: "view my profile"
+      micropost: "micropost"
+    micropost_form:
+      placeholder: "Compose new micropost..."
+      submit: "Post"
+    feed:
+      feed_title: "Micropost Feed"

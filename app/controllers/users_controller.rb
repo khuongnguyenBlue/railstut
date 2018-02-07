@@ -16,9 +16,11 @@ class UsersController < ApplicationController
   end
 
   def show
-    return if user.activated?
-
-    redirect_with_flash :danger, t("message.type.danger.user_not_active"), root_url
+    if user.activated?
+      @microposts = user.microposts.paginate page: params[:page]
+    else
+      redirect_with_flash :danger, t("message.type.danger.user_not_active"), root_url
+    end
   end
 
   def create

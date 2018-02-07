@@ -1,5 +1,7 @@
 vi:
   base_title: "Hướng dẫn Ruby on Rails Sample App"
+  alert:
+    maximum_file: "Dung lượng file tối đa cho phép là 5MB. Hãy chọn file nhỏ hơn."
   message:
     type:
       success:
@@ -7,7 +9,9 @@ vi:
         update_prof: "Thông tin đã được cập nhật"
         delete_user: "Đã xóa người dùng"
         acc_activate: "Tài khoản đã được kích hoạt"
-        password_reset: "Password has been reset."
+        password_reset: "Mật khẩu đã được thiết lập lại."
+        create_micropost: "Bài đã đăng!"
+        delete_micropost: "Bài đã xóa!"
       warning:
         user_not_found: "Không tìm thấy dữ liệu người dùng!"
         acc_not_activated: "Tài khoản chưa được kích hoạt. \
@@ -26,6 +30,7 @@ vi:
     error_text: "Biểu mẫu chứa"
     error: "lỗi"
     empty: "không thể để trống"
+    too_big_file: "cần nhỏ hơn 5MB"
   layouts:
     footer:
       text1: "Bộ"
@@ -50,13 +55,14 @@ vi:
     vi: "Tiếng Việt"
   static_pages:
     home:
-      title: "Trang chủ"
-      header1: "Ứng dụng mẫu"
-      text1: "Đây là trang chủ của"
-      text2: "với ứng dụng mẫu."
-      link1: "Hướng dẫn Ruby on Rails"
-      link2: "Đăng ký ngay!"
-      alt1: "Logo của Rails"
+      title: "Home"
+    non_logged_in_home:
+      header1: "Sample App"
+      text1: "This is the home page for the"
+      text2: "sample application."
+      link1: "Ruby on Rails Tutorial"
+      link2: "Sign up now!"
+      alt1: "Rails logo"
     about:
       title: "Chi tiết"
       header1: "Chi tiết"
@@ -102,6 +108,8 @@ vi:
       label_age: "Tuổi"
       label_passwd: "Mật khẩu"
       label_passwd_cf: "Xác nhận mật khẩu"
+    show:
+      micropost: "Các bài đăng"
     user:
       delete: "xóa"
       confirm: "Bạn có chắc chắn không?"
@@ -140,3 +148,14 @@ vi:
       password: "Mật khẩu mới"
       password_cf: "Xác nhật"
       submit: "Cập nhật mật khẩu"
+  microposts:
+    micropost:
+      delete: "xóa"
+      confirm: "Bạn có chắc chắn?"
+  shared:
+    user_info:
+      view_profile: "Xem trang cá nhân"
+      micropost: "bài viết"
+    micropost_form:
+      placeholder: "Đăng một bài viết..."
+      submit: "Đăng"
