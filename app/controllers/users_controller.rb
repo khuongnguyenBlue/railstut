@@ -26,7 +26,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new user_params
     if user.save
-      user.send_activation_email
+      UserMailer.account_activation(user).deliver_now
       redirect_with_flash :info, t("message.type.info.activate_by_email"), root_url
     else
       render :new

@@ -6,6 +6,14 @@ class User < ApplicationRecord
   attr_reader :remember_token, :activation_token, :reset_token
 
   has_many :microposts, dependent: :destroy
+  has_many :active_relationships, inverse_of: :follower,
+    class_name: Relationship.name, foreign_key: :follower_id,
+    dependent: :destroy
+  has_many :passive_relationships, inverse_of: :followed,
+    class_name: Relationship.name, foreign_key: :followed_id,
+    dependent: :destroy
+  has_many :following, through: :active_relationships, source: :followed
+  has_many :followers, through: :passive_relationships
 
   validates :name, presence: true,
     length: {maximum: Settings.users.name.length.maximum}
@@ -59,10 +67,6 @@ class User < ApplicationRecord
     update_attributes activated_at: Time.zone.now
   end
 
-  def send_activation_email
-    UserMailer.account_activation(self).deliver_now
-  end
-
   def current_user? user
     self == user
   end
@@ -72,16 +76,24 @@ class User < ApplicationRecord
     update_attributes reset_digest: User.digest(reset_token), reset_sent_at: Time.zone.now
   end
 
-  def send_password_reset_email
-    UserMailer.password_reset(self).deliver_now
-  end
-
   def password_reset_expired?
     reset_sent_at < 2.hours.ago
   end
 
   def feed
-    microposts.in_desc_time_order
+    Micropost.feed_of(self).in_desc_time_order
+  end
+
+  def follow other_user
+    following << other_user
+  end
+
+  def unfollow other_user
+    following.delete other_user
+  end
+
+  def following? other_user
+    following.include? other_user
   end
 
   private

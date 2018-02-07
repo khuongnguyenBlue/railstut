@@ -1,5 +1,9 @@
 en:
   base_title: "Ruby on Rails Tutorial Sample App"
+  following:
+    title: "Following"
+  followers:
+    title: "Followers"
   alert:
     maximum_file: "Maximum file size is 5MB. Please choose a smaller file."
   message:
@@ -111,6 +115,13 @@ en:
     user:
       delete: "delete"
       confirm: "You sure?"
+    follow:
+      submit: "Follow"
+    unfollow:
+      submit: "Unfollow"
+    show_follow:
+      view_profile: "view my profile"
+      microposts: "Microposts:"
   sessions:
     new:
       log_in: "Log in"
@@ -157,5 +168,6 @@ en:
     micropost_form:
       placeholder: "Compose new micropost..."
       submit: "Post"
-    feed:
-      feed_title: "Micropost Feed"
+    stats:
+      following: "following"
+      followers: "followers"
