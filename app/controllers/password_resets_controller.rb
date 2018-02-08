@@ -8,7 +8,7 @@ class PasswordResetsController < ApplicationController
 
   def create
     user.create_reset_digest
-    user.send_password_reset_email
+    UserMailer.password_reset(user).deliver_now
     redirect_with_flash :info, t("message.type.info.passwd_reset_sent"), root_url
   end
 
